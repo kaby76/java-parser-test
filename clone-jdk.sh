@@ -11,13 +11,6 @@ case "$var" in
 		;;
 esac
 
-if [ ! -f ~/.hgrc ]
-then
-	echo "It does not look like you have Mercurial on this system."
-	echo "Install and try again."
-	exit 1
-fi
-
 hg version
 retVal=$?
 if [ $retVal -ne 0 ]
