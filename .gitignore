@@ -1,0 +1,11 @@
+*.class
+*.interp
+*.tokens
+*.iml
+java-parser/JavaLexer.g4
+java-parser/JavaLexer.java
+java-parser/JavaParser.g4
+java-parser/JavaParser.java
+java-parser/JavaParserBaseListener.java
+java-parser/JavaParserListener.java
+java-parser/out/
