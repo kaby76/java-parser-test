@@ -22,6 +22,8 @@ public class FunctionValidate {
         }
         int exceptions = 0;
 		ErrorListener errorListener = new ErrorListener();
+		ParseTree tree = null;
+		CommonTokenStream tokens = null;
         try
         {
             File file = new File(args[0]);
@@ -29,16 +31,18 @@ public class FunctionValidate {
             input = new FileInputStream(file);
             ANTLRInputStream str = new ANTLRInputStream(input);
             JavaLexer lexer = new JavaLexer(str);
-            CommonTokenStream tokens = new CommonTokenStream(lexer);
+            tokens = new CommonTokenStream(lexer);
             JavaParser parser = new JavaParser(tokens);
             parser.removeErrorListeners();
             parser.addErrorListener(errorListener);
-            ParseTree tree = parser.compilationUnit();
+            tree = parser.compilationUnit();
         }
         catch (Exception e)
         {
             exceptions++;
         }
         System.out.println("errors " + errorListener.num_errors + " exceptions " + exceptions);
+        Output output = new Output();
+        if (tree != null) System.out.println(output.OutputTree(tree, tokens));
     }
 }
