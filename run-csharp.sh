@@ -1,22 +1,6 @@
 #
 
-date
-
-cd java-parser
-cp ../grammars-v4/java/Java*.g4 .
-"$JAVA_HOME/bin/java.exe" -jar "$Antlr4ToolPath" *.g4
-javac -cp 'C:\Program Files\Java\javalib\antlr-4.7.2-complete.jar' *.java
-"$JAVA_HOME/bin/java.exe" -cp ".;$Antlr4ToolPath" FunctionValidate
-cd ..
-
-date
-
-cd java-parser
-cp ../grammars-v4/java/Java*.g4 .
-dotnet restore
-dotnet build
-dotnet run
-cd ..
+cd csharp-parser
 
 date
 
@@ -25,7 +9,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`"$JAVA_HOME/bin/java.exe" -cp ".;$Antlr4ToolPath" FunctionValidate $i`
+	data=`dotnet run -c Release $i`
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i
@@ -38,7 +22,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`"$JAVA_HOME/bin/java.exe" -cp ".;$Antlr4ToolPath" FunctionValidate $i`
+	data=`dotnet run -c Release $i`
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i
@@ -51,7 +35,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`"$JAVA_HOME/bin/java.exe" -cp ".;$Antlr4ToolPath" FunctionValidate $i`
+	data=`dotnet run -c Release $i`
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i

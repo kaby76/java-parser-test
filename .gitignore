@@ -9,4 +9,13 @@ java-parser/JavaParser.java
 java-parser/JavaParserBaseListener.java
 java-parser/JavaParserListener.java
 java-parser/out/
+
+csharp-parser/JavaLexer.g4
+csharp-parser/JavaParser.g4
+
 jdk/
+android-sdk-sources-for-api-level-29/
+android-sdk-sources-for-api-level-5/
+csharp-parser/.vs/
+csharp-parser/bin/
+csharp-parser/obj/
