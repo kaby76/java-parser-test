@@ -14,8 +14,8 @@ date
 cd csharp-parser
 cp ../grammars-v4/java/Java*.g4 .
 dotnet restore
-dotnet build
-dotnet run
+dotnet build -c Release
+dotnet run -c Release
 cd ..
 
 date
