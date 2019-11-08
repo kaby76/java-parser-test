@@ -9,6 +9,7 @@ namespace Test
         public static void Main(String[] args)
         {
             bool print_tree = false;
+            bool perf = false;
             int file_index = 0;
             if (args.Length == 0)
             {
@@ -23,6 +24,10 @@ namespace Test
                     {
                         print_tree = true;
                     }
+                    else if (args[i] == "-p")
+                    {
+                        perf = true;
+                    }
                     else
                     {
                         file_index = i;
@@ -33,6 +38,7 @@ namespace Test
 	        var errorListener = new ErrorListener<IToken>();
 	        IParseTree tree = null;
             CommonTokenStream tokens = null;
+            var start = DateTime.Now;
             try
             {
                 var input = File.OpenText(args[file_index]);
@@ -49,7 +55,9 @@ namespace Test
                 exceptions++;
             }
             System.Console.WriteLine("errors " + errorListener.num_errors + " exceptions " + exceptions);
-	        if (tree != null) System.Console.WriteLine(tree.OutputTree(tokens));
+            var end = DateTime.Now;
+            if (perf) System.Console.WriteLine(end - start);
+            if (print_tree && tree != null) System.Console.WriteLine(tree.OutputTree(tokens));
         }
     }
 }

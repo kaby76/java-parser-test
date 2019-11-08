@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffa4260c-80ad-479f-82ba-7bbd77b91880" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../csharp-parser/FunctionValidate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../csharp-parser/FunctionValidate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FunctionValidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionValidate.java" afterDir="false" />
@@ -40,7 +39,7 @@
     <configuration name="FunctionValidate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FunctionValidate" />
       <module name="java-parser" />
-      <option name="PROGRAM_PARAMETERS" value="../android-sdk-sources-for-api-level-29/java/awt/font/NumericShaper.java" />
+      <option name="PROGRAM_PARAMETERS" value="-p ../android-sdk-sources-for-api-level-29/java/awt/font/NumericShaper.java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,6 +81,11 @@
           <url>file://$PROJECT_DIR$/Output.java</url>
           <line>57</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/FunctionValidate.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

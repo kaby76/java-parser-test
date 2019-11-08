@@ -3,6 +3,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRInputStream;
@@ -16,6 +17,7 @@ public class FunctionValidate {
     public static void main(String[] args) throws IOException
     {
         boolean print_tree = false;
+        boolean perf = false;
         int file_index = 0;
         if (args.length == 0)
         {
@@ -26,9 +28,13 @@ public class FunctionValidate {
         {
             for (int i = 0; i < args.length; ++i)
             {
-                if (args[i] == "-t")
+                if (args[i].equals("-t"))
                 {
                     print_tree = true;
+                }
+                else if (args[i].equals("-p"))
+                {
+                    perf = true;
                 }
                 else
                 {
@@ -40,6 +46,7 @@ public class FunctionValidate {
         ErrorListener errorListener = new ErrorListener();
         ParseTree tree = null;
         CommonTokenStream tokens = null;
+        long start = System.currentTimeMillis();
         try
         {
             File file = new File(args[file_index]);
@@ -58,7 +65,9 @@ public class FunctionValidate {
             exceptions++;
         }
         System.out.println("errors " + errorListener.num_errors + " exceptions " + exceptions);
+        long end = System.currentTimeMillis();
+        if (perf) System.out.println((end - start) / 1000F);
         Output output = new Output();
-        if (tree != null) System.out.println(output.OutputTree(tree, tokens));
+        if (print_tree && tree != null) System.out.println(output.OutputTree(tree, tokens));
     }
 }
