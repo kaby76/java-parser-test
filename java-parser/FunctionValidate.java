@@ -15,18 +15,34 @@ import org.antlr.v4.runtime.tree.ParseTree;
 public class FunctionValidate {
     public static void main(String[] args) throws IOException
     {
+        boolean print_tree = false;
+        int file_index = 0;
         if (args.length == 0)
         {
             System.out.println("Antlr Java parser.");
             return;
         }
+        else
+        {
+            for (int i = 0; i < args.length; ++i)
+            {
+                if (args[i] == "-t")
+                {
+                    print_tree = true;
+                }
+                else
+                {
+                    file_index = i;
+                }
+            }
+        }
         int exceptions = 0;
-		ErrorListener errorListener = new ErrorListener();
-		ParseTree tree = null;
-		CommonTokenStream tokens = null;
+        ErrorListener errorListener = new ErrorListener();
+        ParseTree tree = null;
+        CommonTokenStream tokens = null;
         try
         {
-            File file = new File(args[0]);
+            File file = new File(args[file_index]);
             FileInputStream input = null;
             input = new FileInputStream(file);
             ANTLRInputStream str = new ANTLRInputStream(input);
