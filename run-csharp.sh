@@ -9,7 +9,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`dotnet run -c Release $i`
+	bin/Release/netcoreapp3.0/Test.exe -p "$i"
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i
@@ -22,7 +22,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`dotnet run -c Release $i`
+	bin/Release/netcoreapp3.0/Test.exe -p "$i"
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i
@@ -35,7 +35,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`dotnet run -c Release $i`
+	bin/Release/netcoreapp3.0/Test.exe -p "$i"
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i

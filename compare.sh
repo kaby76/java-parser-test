@@ -11,7 +11,7 @@ do
 	
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	dotnet run -c Release -t $i > parse-out 2> /dev/null
+	bin/Release/netcoreapp3.0/Test.exe -t "$i" > parse-out 2> /dev/null
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 
@@ -29,4 +29,3 @@ do
 
 	date
 done
-
