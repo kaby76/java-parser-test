@@ -58,9 +58,9 @@ public class FunctionValidate {
             FileInputStream input = null;
             input = new FileInputStream(file);
             ANTLRInputStream str = new ANTLRInputStream(input);
-            JavaLexer lexer = new JavaLexer(str);
+            var lexer = new Java9Lexer(str);
             tokens = new CommonTokenStream(lexer);
-            JavaParser parser = new JavaParser(tokens);
+            var parser = new Java9Parser(tokens);
             parser.removeErrorListeners();
             parser.addErrorListener(errorListener);
             tree = parser.compilationUnit();

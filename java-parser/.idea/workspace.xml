@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffa4260c-80ad-479f-82ba-7bbd77b91880" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../build.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../csharp-parser/FunctionValidate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../csharp-parser/FunctionValidate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FunctionValidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/FunctionValidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../run-csharp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../run-csharp.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../run-java.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../run-java.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +71,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -35,7 +35,7 @@ for i in $files
 do
 	lines=`wc $i | awk '{print $1}'`
 	start=`date +%s.%N`
-	data=`"$JAVA_HOME/bin/java.exe" -cp ".;$Antlr4ToolPath" FunctionValidate $i`
+	data=`"$JAVA_HOME/bin/java.exe" -cp ".;$Antlr4ToolPath" FunctionValidate -p $i`
 	end=`date +%s.%N`
 	runtime=`awk "BEGIN {print $end - $start }"`
 	echo $runtime $lines $data $i

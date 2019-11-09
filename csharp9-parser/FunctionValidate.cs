@@ -40,17 +40,17 @@ namespace Test
                 }
             }
             int exceptions = 0;
-            var errorListener = new ErrorListener<IToken>();
-            IParseTree tree = null;
+	        var errorListener = new ErrorListener<IToken>();
+	        IParseTree tree = null;
             CommonTokenStream tokens = null;
             var start = DateTime.Now;
             try
             {
                 var input = File.OpenText(args[file_index]);
                 var str = new AntlrInputStream(input);
-                JavaLexer lexer = new JavaLexer(str);
+                var lexer = new Java9Lexer(str);
                 tokens = new CommonTokenStream(lexer);
-                var parser = new JavaParser(tokens);
+                var parser = new Java9Parser(tokens);
                 parser.RemoveErrorListeners();
                 parser.AddErrorListener(errorListener);
                 tree = parser.compilationUnit();
