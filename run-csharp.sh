@@ -34,6 +34,7 @@ done
 
 date
 
+cd ..
 cd csharp9-parser
 
 date
